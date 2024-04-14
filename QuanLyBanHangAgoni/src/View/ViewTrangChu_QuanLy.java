@@ -16,6 +16,7 @@ import Service.ServiceImp;
 import Service.ServiceInterface;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Image;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.text.DecimalFormat;
@@ -27,6 +28,8 @@ import java.util.List;
 import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -49,6 +52,9 @@ public class ViewTrangChu_QuanLy extends javax.swing.JFrame {
     DecimalFormat df = new DecimalFormat("#");
     Double tongDoanhThu = ser.tongDoanhThuMD();
     String formattedResult = df.format(tongDoanhThu);
+    JFileChooser dlg = new JFileChooser();
+    String linkAnh = "";
+    String linkAnhSet = "";
 
     public ViewTrangChu_QuanLy() {
         initComponents();
@@ -3084,6 +3090,11 @@ public class ViewTrangChu_QuanLy extends javax.swing.JFrame {
         lblHinhAnh.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblHinhAnh.setText("Hình ảnh");
         lblHinhAnh.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblHinhAnh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHinhAnhMouseClicked(evt);
+            }
+        });
 
         txtTenSPSPCT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -6692,7 +6703,7 @@ public class ViewTrangChu_QuanLy extends javax.swing.JFrame {
     }//GEN-LAST:event_btnUpdateLSDGActionPerformed
     private void jLabel89MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel89MouseClicked
         // TODO add your handling code here:
-        jTabbedPane2.setSelectedIndex(5);
+        jTabbedPane2.setSelectedIndex(6);
     }//GEN-LAST:event_jLabel89MouseClicked
 
     private void btnNewFormVoucherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewFormVoucherActionPerformed
@@ -6739,6 +6750,15 @@ public class ViewTrangChu_QuanLy extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void lblHinhAnhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHinhAnhMouseClicked
+        // TODO add your handling code here:
+        dlg.showOpenDialog(this);
+        String path = dlg.getSelectedFile().getAbsolutePath();
+        ImageIcon icon = new ImageIcon(path);
+        Image imageIcon = icon.getImage().getScaledInstance(120, 150, Image.SCALE_SMOOTH);
+        
+    }//GEN-LAST:event_lblHinhAnhMouseClicked
 
     /**
      * @param args the command line arguments
