@@ -4,6 +4,8 @@
  */
 package Model;
 
+import java.util.Date;
+
 /**
  *
  * @author NGHIAPC
@@ -18,11 +20,13 @@ public class LichSuGia {
     String ngayKetThuc;
     double giaDau;
     double giaSau;
+    String startTime;
+    String endTime;
 
     public LichSuGia() {
     }
 
-    public LichSuGia(String maDonGia, String maSPCT, String TenSP, String maSanPham, String ngayBatDau, String ngayKetThuc, double giaDau, double giaSau) {
+    public LichSuGia(String maDonGia, String maSPCT, String TenSP, String maSanPham, String ngayBatDau, String ngayKetThuc, double giaDau, double giaSau, String startTime, String endTime) {
         this.maDonGia = maDonGia;
         this.maSPCT = maSPCT;
         this.TenSP = TenSP;
@@ -31,6 +35,8 @@ public class LichSuGia {
         this.ngayKetThuc = ngayKetThuc;
         this.giaDau = giaDau;
         this.giaSau = giaSau;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public String getMaDonGia() {
@@ -97,6 +103,24 @@ public class LichSuGia {
         this.giaSau = giaSau;
     }
 
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    
+   
  
   
 }

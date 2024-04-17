@@ -110,6 +110,7 @@ public interface ServiceInterface {
     String getIDNCC(String tenNCC);
     public void addCTSPTTSP(SanPham s);
     public ArrayList<LichSuGia> getAllLichSuDonGia();
+    ArrayList<LichSuGia> getLichSuGiaList(String maSPCT);
     ArrayList<LichSuGia> locLichSuDonGia(String ngayBatDau, String ngayKetThuc);
     ArrayList<LichSuGia> getTimKiemLSG(String keyword);
     ArrayList<LichSuGia> getSXTheoMaLSDG();
