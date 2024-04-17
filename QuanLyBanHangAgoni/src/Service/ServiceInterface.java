@@ -82,6 +82,7 @@ public interface ServiceInterface {
     ArrayList<SanPham> getAllMau();
     ArrayList<SanPham> getAllSanPhamTTSP();
     void updateCTSPTTSP(SanPham s);
+    void updateSLCTSPTTSP(SanPham s);
     void updateSanPhamTTSP(SanPham s);
     void addSanPhamTTSP(SanPham s);
     void addMauSacTTSP(SanPham s);
@@ -153,4 +154,15 @@ public interface ServiceInterface {
     ArrayList<NguoiDung> listEmail(NguoiDung nd);
     ArrayList<NguoiDung> listNV();
     String getTenDN();
+    ArrayList<KhachHang> timKiemTenKhachHangSDT(String keyWord);
+    void themAnhVaoCTSP(String hinhAnh, String maSanPhamChiTiet, String maHinhAnh);
+    Integer getAllHinhAnh();
+    void updateHinhAnhVaoCTSP(String hinhAnh, String maSanPhamChiTiet);
+    void updateTrangThaiSanPhamSoLuong();
+    ArrayList<SanPham> dsSPThongKe();
+    ArrayList<ChiTietHoaDon> dsHDThongKe();
+    Integer tongHoaDonThanhToanDHuy(String ngayBatDau, String ngayKetThuc);
+    Integer tongHoaDonThanhToanDHT(String ngayBatDau, String ngayKetThuc);
+    Integer tongHoaDonThanhToanHuy();
+    ArrayList<HoaDonChiTiet> getHDCTBCTK(String maHoaDon);
 };
